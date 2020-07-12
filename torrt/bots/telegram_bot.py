@@ -118,17 +118,17 @@ class TelegramBot(BaseBot):
         else:
 
             user_data['url'] = torrent_url
-            download_dirs = set()
+            download_dirs = {'/share/media/movies', '/share/media/tvshows'}
 
-            for rpc_alias, rpc in RPCObjectsRegistry.get().items():
-
-                if not rpc.enabled:
-                    continue
-
-                torrents = rpc.method_get_torrents()
-
-                for torrent in torrents:
-                    download_dirs.add(torrent['download_to'])
+            # for rpc_alias, rpc in RPCObjectsRegistry.get().items():
+            #
+            #     if not rpc.enabled:
+            #         continue
+            #
+            #     torrents = rpc.method_get_torrents()
+            #
+            #     for torrent in torrents:
+            #         download_dirs.add(torrent['download_to'])
 
             choices = [[directory] for directory in download_dirs]
 

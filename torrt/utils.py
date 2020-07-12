@@ -393,7 +393,7 @@ class WithSettings:
 class TorrtConfig:
     """Gives methods to work with torrt configuration file."""
 
-    USER_DATA_PATH = os.path.join(os.path.expanduser('~'), '.torrt')
+    USER_DATA_PATH = os.path.join(os.path.expanduser('~'), '_torrt')
     USER_SETTINGS_FILE = os.path.join(USER_DATA_PATH, 'config.json')
 
     _basic_settings = {
